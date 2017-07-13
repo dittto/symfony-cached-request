@@ -4,6 +4,7 @@ namespace Dittto\CachedRequestBundle\GuzzleMiddleware;
 use Dittto\CachedRequestBundle\CacheKeyGenerator\CacheKeyInterface;
 use GuzzleHttp\Exception\TransferException;
 use GuzzleHttp\Promise\FulfilledPromise;
+use GuzzleHttp\Promise\PromiseInterface;
 use GuzzleHttp\Promise\RejectedPromise;
 use Psr\Http\Message\{
     RequestInterface, ResponseInterface
@@ -15,7 +16,7 @@ class CachedMiddleware
     public const CACHE_TIME_IN_S = 'cache_time';
     private const DEFAULT_CACHE_TIME = 5;
 
-    public function onRequest(CacheInterface $cache, CacheKeyInterface $keyGenerator, int $defaultCacheTime = self::DEFAULT_CACHE_TIME)
+    public function onRequest(CacheInterface $cache, CacheKeyInterface $keyGenerator, int $defaultCacheTime = self::DEFAULT_CACHE_TIME):\Closure
     {
         return function (callable $handler) use ($cache, $keyGenerator, $defaultCacheTime) {
             return function (RequestInterface $request, array $options) use ($handler, $cache, $keyGenerator, $defaultCacheTime) {

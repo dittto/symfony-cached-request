@@ -107,7 +107,7 @@ class LoggedCacheDecorator implements LoggerAwareInterface, CacheInterface
         return $result;
     }
 
-    public function deleteMultiple($keys)
+    public function deleteMultiple($keys):bool
     {
         $result = $this->cache->deleteMultiple($keys);
 
