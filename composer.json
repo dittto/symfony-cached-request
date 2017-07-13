@@ -1,0 +1,22 @@
+{
+  "name" : "dittto/symfony-cached-request",
+  "description" : "Handles automatically caching requests via guzzle",
+  "type" : "symfony-bundle",
+  "authors" : [{
+    "name" : "Nick Stacey",
+    "email" : "nick@ditt.to"
+  }],
+  "keywords" : ["caching cached requests guzzle"],
+  "license" : ["MIT"],
+  "require-dev" : {
+    "phpunit/phpunit": "^5.7",
+    "symfony/symfony": "~3.3",
+    "symfony/dependency-injection": "^3.0",
+    "guzzlehttp/guzzle": "~6.0",
+    "psr/log": "~1.0"
+  },
+  "autoload" : {
+    "psr-0" : {"Dittto\\CachedRequestBundle" : ""}
+  },
+  "target-dir" : "Dittto/CachedRequestBundle"
+}

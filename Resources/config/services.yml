@@ -1,0 +1,8 @@
+services:
+    dittto.cached_request.middleware:
+        class: Dittto\CachedRequestBundle\GuzzleMiddleware\CachedMiddleware
+        arguments: [ ]
+
+    dittto.cached_request.generator.sha1_uri:
+        class: Dittto\CachedRequestBundle\CacheKeyGenerator\Sha1UriCacheKey
+        arguments: [ ]
